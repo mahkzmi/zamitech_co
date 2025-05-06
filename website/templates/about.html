@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>زامیتک | درباره ما</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>زامیتک</h1>
+        <nav>
+            <a href="/">خانه</a>
+            <a href="/about/" class="active">درباره ما</a>
+            <a href="/products/">محصولات</a>
+            <a href="/contact/">تماس با ما</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="page-title">درباره ما</h1>
+        
+        <div class="about-section">
+            <div class="card about-card">
+                <div class="about-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h2>ماموریت ما</h2>
+                <p>زامیتک با هدف هوشمندسازی صنعت کشاورزی و افزایش بهره‌وری مزرعه‌ها تأسیس شده است. ما معتقدیم فناوری می‌تواند تحول بزرگی در این حوزه ایجاد کند.</p>
+            </div>
+            
+            <div class="card about-card">
+                <div class="about-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h2>تیم ما</h2>
+                <p>تیم زامیتک متشکل از متخصصان کشاورزی، مهندسان نرم‌افزار و تحلیلگران داده است که با همکاری یکدیگر راهکارهای نوآورانه ارائه می‌دهند.</p>
+            </div>
+            
+            <div class="card about-card">
+                <div class="about-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h2>دستاوردها</h2>
+                <p>تاکنون توانسته‌ایم با راهکارهای خود به بیش از ۲۰۰ مزرعه در سراسر کشور کمک کنیم و میانگین عملکرد محصولات را تا ۳۵٪ افزایش دهیم.</p>
+            </div>
+        </div>
+        
+        <div class="card history-card">
+            <h2>تاریخچه زامیتک</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">۱۳۹۸</div>
+                    <div class="timeline-content">
+                        <h3>تأسیس شرکت</h3>
+                        <p>شروع فعالیت با یک تیم ۳ نفره در مرکز رشد دانشگاه تهران</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">۱۳۹۹</div>
+                    <div class="timeline-content">
+                        <h3>اولین محصول</h3>
+                        <p>انتشار نسخه اولیه سامانه آباک برای تحلیل خاک</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">۱۴۰۱</div>
+                    <div class="timeline-content">
+                        <h3>گسترش تیم</h3>
+                        <p>جذب سرمایه اولیه و توسعه تیم به ۱۲ نفر</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

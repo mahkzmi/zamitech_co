@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>زامیتک | محصولات</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>زامیتک</h1>
+        <nav>
+            <a href="/">خانه</a>
+            <a href="/about/">درباره ما</a>
+            <a href="/products/" class="active">محصولات</a>
+            <a href="/contact/">تماس با ما</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="page-title">محصولات ما</h1>
+        <div class="products-grid">
+            <div class="card">
+                <h2>آباک</h2>
+                <p>سامانه ایرانیزه‌شده NRCS USDA WSS برای تحلیل خاک و تناسب اراضی</p>
+                <a href="/products/abak/" class="button">جزئیات محصول</a>
+            </div>
+            <div class="card">
+                <h2>سامانه پیش‌بینی عملکرد</h2>
+                <p>پیش‌بینی عملکرد محصول براساس داده‌های محیطی و مدیریتی</p>
+                <a href="/products/yield-prediction/" class="button">جزئیات محصول</a>
+            </div>
+            <div class="card">
+                <h2>سامانه توصیه کودی</h2>
+                <p>ارائه توصیه کودی مبتنی بر داده و هوش مصنوعی</p>
+                <a href="/products/fertilizer-recommendation/" class="button">جزئیات محصول</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

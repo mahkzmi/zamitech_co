@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>زامیتک | تماس با ما</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>زامیتک</h1>
+        <nav>
+            <a href="/">خانه</a>
+            <a href="/about/">درباره ما</a>
+            <a href="/products/">محصولات</a>
+            <a href="/contact/" class="active">تماس با ما</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="page-title">راه‌های ارتباطی</h1>
+        <div class="contact-container">
+            <div class="card contact-card">
+                <div class="contact-icon">📧</div>
+                <h2>ایمیل</h2>
+                <p>info@zamitech.com</p>
+                <a href="mailto:info@zamitech.com" class="button">ارسال ایمیل</a>
+            </div>
+            
+            <div class="card contact-card">
+                <div class="contact-icon">📱</div>
+                <h2>تلفن</h2>
+                <p>۰۹۱۲-XXX-XXXX</p>
+                <a href="tel:+98912XXXXXXX" class="button">تماس تلفنی</a>
+            </div>
+            
+            <div class="card contact-card">
+                <div class="contact-icon">🗺️</div>
+                <h2>آدرس</h2>
+                <p>تهران، خیابان آزادی، دانشگاه تهران، مرکز رشد</p>
+                <a href="https://maps.google.com" target="_blank" class="button">مشاهده در نقشه</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
