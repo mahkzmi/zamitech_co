@@ -1,270 +1,175 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>زامیتک | آینده کشاورزی هوشمند</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --primary: #00A896;
-      --primary-dark: #00887A;
-      --secondary: #05668D;
-      --dark: #1A2E35;
-      --light: #F0F3F5;
-      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Vazirmatn', sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(0, 168, 150, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(5, 102, 141, 0.1) 0%, transparent 20%);
-      line-height: 1.6;
-    }
-    
-    .container {
-      width: 100%;
-      max-width: 600px;
-      padding: 2.5rem;
-      margin: 2rem;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 24px;
-      box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.05),
-        0 1px 3px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      overflow: hidden;
-      position: relative;
-      transition: transform 0.3s ease;
-    }
-    
-    .container:hover {
-      transform: translateY(-5px);
-    }
-    
-    .container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 8px;
-      background: var(--gradient);
-    }
-    
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    .logo-icon {
-      width: 50px;
-      height: 50px;
-      background: var(--gradient);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0, 168, 150, 0.3);
-    }
-    
-    .logo-text {
-      font-size: 2.2rem;
-      font-weight: 700;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-    }
-    
-    .subtitle {
-      text-align: center;
-      font-size: 1.2rem;
-      color: var(--dark);
-      opacity: 0.8;
-      margin-bottom: 2.5rem;
-      font-weight: 400;
-      line-height: 1.8;
-    }
-    
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    
-    .input-wrapper {
-      position: relative;
-    }
-    
-    .input-wrapper i {
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--primary);
-      opacity: 0.7;
-    }
-    
-    input {
-      width: 100%;
-      padding: 1rem 1rem 1rem 3rem;
-      border: 2px solid rgba(0, 0, 0, 0.1);
-      border-radius: 12px;
-      font-size: 1rem;
-      font-family: 'Vazirmatn', sans-serif;
-      transition: all 0.3s ease;
-      background-color: rgba(0, 0, 0, 0.02);
-    }
-    
-    input:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.2);
-      background-color: white;
-    }
-    
-    input::placeholder {
-      color: rgba(0, 0, 0, 0.4);
-    }
-    
-    button {
-      width: 100%;
-      padding: 1rem;
-      background: var(--gradient);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      font-size: 1rem;
-      font-weight: 500;
-      font-family: 'Vazirmatn', sans-serif;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 168, 150, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-    
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 168, 150, 0.4);
-    }
-    
-    button:active {
-      transform: translateY(0);
-    }
-    
-    .footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: rgba(0, 0, 0, 0.5);
-      margin-top: 2.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    
-    .social-links a {
-      color: var(--dark);
-      opacity: 0.6;
-      transition: all 0.3s ease;
-      font-size: 1.2rem;
-    }
-    
-    .social-links a:hover {
-      opacity: 1;
-      color: var(--primary);
-    }
-    
-    @media (max-width: 600px) {
-      .container {
-        padding: 2rem 1.5rem;
-        margin: 1rem;
-      }
-      
-      .logo-text {
-        font-size: 1.8rem;
-      }
-      
-      .logo-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-      }
-      
-      .subtitle {
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زامیتک | راهکارهای هوشمند کشاورزی</title>
+    <meta name="description" content="پیشرفته‌ترین راهکارهای هوشمند کشاورزی با فناوری روز دنیا">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <div class="logo">
-      <div class="logo-icon">
-        <i class="fas fa-leaf"></i>
-      </div>
-      <div class="logo-text">زامیتک</div>
-    </div>
-    
-    <div class="subtitle">
-      در حال ساخت آینده کشاورزی هوشمند ایران هستیم.<br>
-      به جمع پیشگامان کشاورزی دیجیتال بپیوندید.
-    </div>
-    
-    <form class="form-group">
-      <div class="input-wrapper">
-        <i class="fas fa-envelope"></i>
-        <input type="email" placeholder="آدرس ایمیل خود را وارد کنید" required>
-      </div>
-      
-      <button type="submit">
-        <i class="fas fa-paper-plane"></i>
-        باخبرم کن!
-      </button>
-    </form>
-    
-    <div class="footer">
-      © ۲۰۲۵ زامیتک | تمامی حقوق محفوظ است
-      <div class="social-links">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-telegram"></i></a>
-      </div>
-    </div>
-  </div>
+    <!-- Header Section -->
+    <header class="glass-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="زامیتک" class="logo-img">
+                    <span class="logo-text">زامیتک</span>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">خانه</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="products.html">محصولات</a></li>
+                    <li><a href="contact.html">تماس با ما</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">انقلاب در کشاورزی هوشمند</h1>
+                <p class="hero-subtitle">با راهکارهای نوین زامیتک، آینده کشاورزی را امروز تجربه کنید</p>
+                <div class="hero-actions">
+                    <a href="products.html" class="cta-btn primary-btn">محصولات ما <i class="fas fa-arrow-left"></i></a>
+                    <a href="contact.html" class="cta-btn secondary-btn">مشاوره رایگان <i class="fas fa-headset"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-shape"></div>
+    </section>
+
+    <!-- خدمات Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">خدمات اختصاصی زامیتک</h2>
+                <p class="section-subtitle">راهکارهای جامع برای کشاورزی مدرن و هوشمند</p>
+            </div>
+            
+            <div class="service-cards">
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>محصولات هوشمند</h3>
+                    <p>راهکارهای نوین کشاورزی برای بهبود عملکرد و افزایش بهره‌وری</p>
+                    <a href="#" class="card-link">بیشتر بدانید <i class="fas fa-arrow-left"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>پشتیبانی آنلاین</h3>
+                    <p>پشتیبانی 24 ساعته برای اطمینان از عملکرد بی‌وقفه سیستم‌ها</p>
+                    <a href="#" class="card-link">بیشتر بدانید <i class="fas fa-arrow-left"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>مشاوره تخصصی</h3>
+                    <p>توصیه‌های حرفه‌ای برای مدیریت زمین، آبیاری و بهینه‌سازی منابع</p>
+                    <a href="#" class="card-link">بیشتر بدانید <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ویژگی‌ها Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-content">
+                <div class="feature-text">
+                    <h2>فناوری هوشمند زامیتک</h2>
+                    <p>با استفاده از آخرین فناوری‌های روز دنیا در حوزه اینترنت اشیا و هوش مصنوعی، سیستم‌های هوشمند کشاورزی را برای شما طراحی کرده‌ایم.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> مانیتورینگ لحظه‌ای شرایط محیطی</li>
+                        <li><i class="fas fa-check-circle"></i> سیستم آبیاری هوشمند</li>
+                        <li><i class="fas fa-check-circle"></i> پیش‌بینی و تحلیل داده‌ها</li>
+                        <li><i class="fas fa-check-circle"></i> کنترل از راه دور</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <img src="assets/images/feature-image.png" alt="فناوری هوشمند زامیتک" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo-white.png" alt="زامیتک">
+                        <span>زامیتک</span>
+                    </div>
+                    <p>پیشرو در ارائه راهکارهای هوشمند کشاورزی با بهره‌گیری از آخرین فناوری‌های روز دنیا</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>لینک‌های سریع</h3>
+                    <ul>
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="products.html">محصولات</a></li>
+                        <li><a href="contact.html">تماس با ما</a></li>
+                        <li><a href="#">مقالات</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>خدمات ما</h3>
+                    <ul>
+                        <li><a href="#">کشاورزی هوشمند</a></li>
+                        <li><a href="#">سیستم آبیاری</a></li>
+                        <li><a href="#">پایش محیطی</a></li>
+                        <li><a href="#">مشاوره تخصصی</a></li>
+                        <li><a href="#">نصب و راه‌اندازی</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>تماس با ما</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> تهران، خیابان آزادی، بلوار کشاورز</li>
+                        <li><i class="fas fa-phone"></i> 021-12345678</li>
+                        <li><i class="fas fa-envelope"></i> info@zamitech.ir</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 زامیتک. تمامی حقوق محفوظ است.</p>
+                <div class="footer-links">
+                    <a href="#">حریم خصوصی</a>
+                    <a href="#">قوانین و مقررات</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
