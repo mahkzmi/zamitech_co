@@ -1,0 +1,177 @@
+{% extends 'core/base.html' %}
+
+{% block title %}تماس با زامیتک | ارتباط با تیم هوشمندسازی کشاورزی{% endblock %}
+
+{% block content %}
+<!-- بخش هیرو با تصویر پس‌زمینه -->
+<section class="relative bg-gradient-to-r from-green-700 to-green-900 py-24 text-white">
+    <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">با زامیتک در ارتباط باشید</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto text-green-100">ما آماده پاسخگویی به سوالات شما و ارائه راهکارهای هوشمند کشاورزی هستیم</p>
+    </div>
+</section>
+
+<!-- بخش فرم تماس -->
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- فرم تماس -->
+            <div class="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
+                <h2 class="text-2xl font-bold text-green-800 mb-6">پیام خود را ارسال کنید</h2>
+                
+                <form method="POST" action="" class="space-y-6">
+                    {% csrf_token %}
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2 font-medium">نام کامل <span class="text-red-500">*</span></label>
+                            <input type="text" name="name" required 
+                                   class="w-full rounded-xl border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                                   placeholder="نام و نام خانوادگی">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-2 font-medium">ایمیل <span class="text-red-500">*</span></label>
+                            <input type="email" name="email" required 
+                                   class="w-full rounded-xl border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                                   placeholder="example@zamitech.ir">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 mb-2 font-medium">موضوع</label>
+                        <input type="text" name="subject" 
+                               class="w-full rounded-xl border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                               placeholder="موضوع پیام شما">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 mb-2 font-medium">پیام شما <span class="text-red-500">*</span></label>
+                        <textarea name="message" rows="5" required 
+                                  class="w-full rounded-xl border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                                  placeholder="متن پیام خود را بنویسید..."></textarea>
+                    </div>
+                    
+                    <div class="pt-2">
+                        <button type="submit" 
+                                class="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 font-semibold">
+                            <i class="fas fa-paper-plane ml-2"></i> ارسال پیام
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- اطلاعات تماس -->
+            <div class="space-y-8">
+                <div class="bg-green-50 rounded-2xl p-6 border border-green-100">
+                    <h3 class="text-xl font-bold text-green-800 mb-4">اطلاعات تماس</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-lg text-green-600 mr-4">
+                                <i class="fas fa-map-marker-alt text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">آدرس دفتر مرکزی</h4>
+                                <p class="text-gray-600">تهران، خیابان آزادی، دانشگاه تهران، مرکز رشد واحدهای فناور</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-lg text-green-600 mr-4">
+                                <i class="fas fa-phone-alt text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">تلفن تماس</h4>
+                                <p class="text-gray-600">۰۲۱-۸۸۸۸۸۸۸۸</p>
+                                <p class="text-gray-600">۰۹۱۲-۱۲۳۴۵۶۷ (پشتیبانی فنی)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-lg text-green-600 mr-4">
+                                <i class="fas fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">ایمیل</h4>
+                                <p class="text-gray-600">info@zamitech.ir</p>
+                                <p class="text-gray-600">support@zamitech.ir (پشتیبانی)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- شبکه‌های اجتماعی -->
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">ما را در شبکه‌های اجتماعی دنبال کنید</h3>
+                    
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="https://instagram.com/zamitech" target="_blank" class="bg-gradient-to-br from-pink-500 to-purple-600 text-white p-3 rounded-lg hover:shadow-lg transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/zamitech" target="_blank" class="bg-blue-600 text-white p-3 rounded-lg hover:shadow-lg transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://t.me/zamitech" target="_blank" class="bg-blue-500 text-white p-3 rounded-lg hover:shadow-lg transition">
+                            <i class="fab fa-telegram text-xl"></i>
+                        </a>
+                        <a href="https://twitter.com/zamitech" target="_blank" class="bg-blue-400 text-white p-3 rounded-lg hover:shadow-lg transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ساعات کاری -->
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">ساعات کاری</h3>
+                    
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">شنبه تا چهارشنبه:</span>
+                            <span class="font-medium">۸:۳۰ صبح تا ۱۶:۳۰ بعدازظهر</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">پنجشنبه:</span>
+                            <span class="font-medium">۸:۳۰ صبح تا ۱۳:۰۰</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">جمعه:</span>
+                            <span class="font-medium">تعطیل</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- نقشه گوگل -->
+<section class="bg-gray-100 py-8">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">موقعیت ما روی نقشه</h2>
+        <div class="rounded-2xl overflow-hidden shadow-lg">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.676029566011!2d51.35121531526968!3d35.70352398018772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQyJzEyLjciTiA1McKwMjEnMDguNiJF!5e0!3m2!1sen!2sir!4v1620000000000!5m2!1sen!2sir" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"
+                class="filter grayscale-20 hover:grayscale-0 transition">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<style>
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+{% endblock %}

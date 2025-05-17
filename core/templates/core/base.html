@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="زامیتک - ارائه دهنده راهکارهای هوشمند کشاورزی با فناوری‌های بومی و نوآورانه">
+    <title>{% block title %}زامیتک | هوشمندسازی کشاورزی{% endblock %}</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- فونت ایران سنس -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts.css">
+    
+    <style>
+        body {
+            font-family: Vazirmatn, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            right: 0;
+            background-color: #059669;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+            left: 0;
+        }
+        
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+    <!-- هدر جدید با طراحی مدرن -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- لوگو -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/" class="flex items-center">
+                        <div class="w-10 h-10 rounded-lg bg-green-600 flex items-center justify-center mr-2">
+                            <span class="text-white font-bold text-xl">ز</span>
+                        </div>
+                        <span class="text-xl font-bold text-green-800 hidden md:block">زامیتک</span>
+                    </a>
+                </div>
+                
+                <!-- منوی دسکتاپ -->
+                <nav class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="/" class="nav-link text-gray-700 hover:text-green-600 font-medium">خانه</a>
+                    <a href="/products/" class="nav-link text-gray-700 hover:text-green-600 font-medium">محصولات</a>
+                    <a href="/about/" class="nav-link text-gray-700 hover:text-green-600 font-medium">درباره ما</a>
+                    <a href="/blog/" class="nav-link text-gray-700 hover:text-green-600 font-medium">وبلاگ</a>
+                    <a href="/contact/" class="nav-link text-gray-700 hover:text-green-600 font-medium">تماس</a>
+                </nav>
+                
+                <!-- دکمه‌های سمت چپ -->
+                <div class="hidden md:flex items-center space-x-4 space-x-reverse">
+                    <a href="/demo/" class="px-4 py-2 border border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition">
+                        درخواست دمو
+                    </a>
+                    <a href="/login/" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+                        ورود
+                    </a>
+                </div>
+                
+                <!-- منوی موبایل -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-green-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- منوی موبایل (پنهان) -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50">خانه</a>
+                <a href="/products/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50">محصولات</a>
+                <a href="/solutions/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50">راهکارها</a>
+                <a href="/about/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50">درباره ما</a>
+                <a href="/blog/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50">وبلاگ</a>
+                <a href="/contact/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50">تماس</a>
+                <div class="pt-2 border-t border-gray-200">
+                    <a href="/demo/" class="block px-3 py-2 rounded-md text-base font-medium text-green-600 hover:bg-green-50">درخواست دمو</a>
+                    <a href="/login/" class="block px-3 py-2 rounded-md text-base font-medium text-green-600 hover:bg-green-50">ورود به حساب کاربری</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- فوتر پیشرفته -->
+    <footer class="bg-gray-800 text-gray-300 pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-600 flex items-center justify-center mr-2">
+                            <span class="text-white font-bold text-xl">ز</span>
+                        </div>
+                        <span class="text-xl font-bold text-white">زامیتک</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        پیشگام در هوشمندسازی کشاورزی با فناوری‌های بومی و نوآورانه. ما در زامیتک با ترکیب دانش کشاورزی و تکنولوژی روز، راهکارهای هوشمندی برای افزایش بهره‌وری ارائه می‌دهیم.
+                    </p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-telegram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-4">لینک‌های سریع</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/products/" class="text-gray-400 hover:text-white transition">محصولات</a></li>
+                        <li><a href="/solutions/" class="text-gray-400 hover:text-white transition">راهکارها</a></li>
+                        <li><a href="/about/" class="text-gray-400 hover:text-white transition">درباره ما</a></li>
+                        <li><a href="/blog/" class="text-gray-400 hover:text-white transition">وبلاگ</a></li>
+                        <li><a href="/contact/" class="text-gray-400 hover:text-white transition">تماس با ما</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-4">تماس با ما</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 ml-2 text-green-500"></i>
+                            <span class="text-gray-400">تهران، خیابان آزادی، دانشگاه تهران، مرکز رشد</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone ml-2 text-green-500"></i>
+                            <span class="text-gray-400">۰۲۱-۸۸۸۸۸۸۸۸</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope ml-2 text-green-500"></i>
+                            <span class="text-gray-400">info@zamitech.ir</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+                <p>© ۱۴۰۳ تمامی حقوق برای شرکت زامیتک محفوظ است.</p>
+                <p class="mt-2">طراحی و توسعه با <i class="fas fa-heart text-red-500"></i> در ایران</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- اسکریپت منوی موبایل -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('open');
+            });
+            
+            // بستن منو هنگام کلیک روی لینک‌ها
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

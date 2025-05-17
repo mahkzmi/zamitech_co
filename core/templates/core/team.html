@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+
+{% block title %}تیم زامیتک{% endblock %}
+
+{% block content %}
+<section class="bg-white py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h1 class="text-4xl font-bold text-center text-green-800 mb-12">تیم زامیتک</h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+      <!-- عضو تیم -->
+      <div class="bg-gray-100 rounded-xl p-6 text-center shadow hover:shadow-lg transition">
+        <img src="{% static 'images/team/member1.jpg' %}" alt="نام عضو" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
+        <h3 class="text-xl font-semibold text-green-900 mb-1">دکتر پارسا ناصری</h3>
+        <p class="text-green-700 mb-3 font-medium">مدیرعامل و بنیان‌گذار</p>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          متخصص در علوم خاک و فناوری اطلاعات، با بیش از ۱۰ سال تجربه در پروژه‌های هوشمندسازی کشاورزی.
+        </p>
+      </div>
+
+      <!-- عضو تیم -->
+      <div class="bg-gray-100 rounded-xl p-6 text-center shadow hover:shadow-lg transition">
+        <img src="{% static 'images/team/member2.jpg' %}" alt="نام عضو" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
+        <h3 class="text-xl font-semibold text-green-900 mb-1">مهندس نازنین کریمی</h3>
+        <p class="text-green-700 mb-3 font-medium">برنامه‌نویس ارشد</p>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          توسعه‌دهنده بک‌اند و کارشناس طراحی API با تخصص در پایتون و جنگو.
+        </p>
+      </div>
+
+      <!-- عضو تیم -->
+      <div class="bg-gray-100 rounded-xl p-6 text-center shadow hover:shadow-lg transition">
+        <img src="{% static 'images/team/member3.jpg' %}" alt="نام عضو" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
+        <h3 class="text-xl font-semibold text-green-900 mb-1">سارا محمدی</h3>
+        <p class="text-green-700 mb-3 font-medium">طراح UI/UX</p>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          مسئول طراحی رابط کاربری و تجربه کاربری با دیدی خلاقانه و کاربرمحور.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

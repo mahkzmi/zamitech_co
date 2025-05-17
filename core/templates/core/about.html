@@ -1,0 +1,222 @@
+{% extends 'core/base.html' %}
+
+{% block title %}درباره زامیتک | پیشگام در هوشمندسازی کشاورزی{% endblock %}
+
+{% block content %}
+<!-- بخش هیرو با تصویر پارالکس -->
+<section class="relative bg-green-900 text-white py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center opacity-30"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">داستان زامیتک</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto text-green-100">
+          ترکیبی از دانش کشاورزی و نوآوری‌های فناورانه و دغدغه مندی برای آینده‌ای سبز
+        </p>
+    </div>
+    
+    <!-- شکل هندسی آبستره -->
+    <div class="absolute bottom-0 left-0 w-full h-16 bg-white transform -skew-y-2 origin-bottom-right"></div>
+</section>
+
+<!-- بخش معرفی شرکت -->
+<section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                <!-- تصویر با افکت و حاشیه هنری -->
+                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1585011650347-c59dbef5a823?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="تیم زامیتک" 
+                         class="w-full h-auto object-cover">
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-green-600 rounded-full opacity-20"></div>
+                <div class="absolute -top-6 -left-6 w-24 h-24 bg-yellow-500 rounded-full opacity-20"></div>
+            </div>
+            
+            <div>
+                <h2 class="text-3xl font-bold text-green-800 mb-6">زامیتک کیست؟</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    زامیتک یک استارتاپ فناور در حوزه <span class="font-semibold text-green-700">هوشمندسازی کشاورزی</span> است که با ترکیب تخصص کشاورزی و فناوری اطلاعات، راهکارهای نوینی برای چالش‌های این حوزه ارائه می‌دهد. ما باور داریم که آینده کشاورزی به داده‌ها و تحلیل‌های هوشمند وابسته است.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    تیم ما متشکل از <span class="font-semibold">متخصصان خاک‌شناسی، هوش مصنوعی، کشاورزی دقیق و توسعه نرم‌افزار</span> است که با همکاری یکدیگر، پلتفرم‌های یکپارچه‌ای برای مدیریت هوشمند مزارع طراحی کرده‌اند.
+                </p>
+                
+                <!-- آمارهای شرکت -->
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                    <div class="bg-green-50 rounded-xl p-4 text-center">
+                        <div class="text-3xl font-bold text-green-700 mb-1">+4</div>
+                        <div class="text-sm text-gray-600">محصول</div>
+                    </div>
+                     <div class="grid grid-cols-2 gap-4 mt-8">
+                    <div class="bg-green-50 rounded-xl p-4 text-center">
+                        <div class="text-3xl font-bold text-green-700 mb-1">+10</div>
+                        <div class="text-sm text-gray-600">ایده ی جدید در حال بررسی...</div>
+                    </div>
+                    <div class="bg-green-50 rounded-xl p-4 text-center">
+                        <div class="text-3xl font-bold text-green-700 mb-1">90٪</div>
+                        <div class="text-sm text-gray-600">رضایت مشتریان</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- بخش ارزش‌ها و ماموریت -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-green-800 mb-4">چرا زامیتک؟</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">ارزش‌ها و اهدافی که ما را متمایز می‌کنند</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- کارت ماموریت -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-center text-green-800 mb-4">ماموریت ما</h3>
+                <p class="text-gray-600 text-center">
+                    تبدیل داده‌های خام کشاورزی به بینش‌های عملی و تصمیمات هوشمند برای افزایش بهره‌وری و کاهش هزینه‌ها در مزارع و گلخانه‌ها
+                </p>
+            </div>
+            
+            <!-- کارت چشم‌انداز -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-center text-green-800 mb-4">چشم‌انداز ما</h3>
+                <p class="text-gray-600 text-center">
+                    تبدیل شدن به پیشروترین پلتفرم داده‌محور در کشاورزی هوشمند در سطح منطقه تا سال ۱۴۰۵ با تمرکز بر نوآوری‌های بومی و پایدار
+                </p>
+            </div>
+            
+            <!-- کارت ارزش‌ها -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-center text-green-800 mb-4">ارزش‌های ما</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        نوآوری و خلاقیت
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        دقت علمی و تخصص
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        مسئولیت اجتماعی
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        پایداری محیط زیستی
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- بخش تیم -->
+<section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-green-800 mb-4">تیم زامیتک</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">متخصصانی از حوزه‌های مختلف که با همکاری یکدیگر آینده کشاورزی را می‌سازند</p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- عضو تیم 1 -->
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
+                     alt="مدیر عامل" 
+                     class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800">مهدیه کاظمی</h3>
+                    <p class="text-green-600 mb-3"> - مدیر محصول - توسعه دهنده اصلی و بنیان‌گذار</p>
+                    <p class="text-gray-600 text-sm" >کارشناس ارشد مدیریت منابع خاک از دانشگاه تهران - توسعه دهنده بک اند</p>
+                </div>
+            </div>
+            
+            <!-- عضو تیم 2 -->
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
+                     alt="مدیر فناوری" 
+                     class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800">حسین خدمتی</h3>
+                    <p class="text-green-600 mb-3">هم بنیان گذار</p>
+                    <p class="text-gray-600 text-sm">کارشناس علوم و مهندسی خاک از دانشگاه تهران - توسعه دهنده ی فرانت اند</p>
+                </div>
+            </div>
+            
+            <!-- عضو تیم 3 -->
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
+                     alt="مدیر محصول" 
+                     class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800">احمدرضا گلستانه</h3>
+                    <p class="text-green-600 mb-3"> مدیر فناوری</p>
+                    <p class="text-gray-600 text-sm">کارشناس علوم کامپیوتر و توسعه دهنده فرانت اند</p>
+                </div>
+            </div>
+            
+            <!-- عضو تیم 4 -->
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
+                     alt="مدیر بازاریابی" 
+                     class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800">امیر دشتی</h3>
+                    <p class="text-green-600 mb-3">مدیر بازاریابی</p>
+                    <p class="text-gray-600 text-sm">کارشناس آموزش و ترویج کشاورزی از دانشگاه تهران</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- بخش همکاری -->
+<section class="py-16 bg-gradient-to-r from-green-700 to-green-900 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6">آماده همکاری با زامیتک هستید؟</h2>
+        <p class="text-xl mb-8 text-green-100">
+            چه کشاورز هستید، چه محقق یا سرمایه‌گذار، ما مشتاق شنیدن ایده‌ها و ایجاد همکاری‌های جدید هستیم.
+        </p>
+        <a href="/contact/" class="inline-block bg-white text-green-700 hover:bg-gray-100 px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition font-semibold">
+            تماس با ما
+        </a>
+    </div>
+</section>
+
+<style>
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,187 @@
+{% extends 'core/base.html' %}
+
+{% block title %}درخواست دمو رایگان | زامیتک{% endblock %}
+
+{% block content %}
+<!-- هیرو با گرادیان و افکت شیشه‌ای -->
+<section class="relative bg-gradient-to-br from-green-800 to-green-600 py-24 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center opacity-20"></div>
+    <div class="absolute inset-0 backdrop-blur-sm"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">درخواست دمو رایگان</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto text-green-100">
+            محصولات زامیتک را به صورت عملی و رایگان تجربه کنید
+        </p>
+    </div>
+    
+    <!-- موج طراحی -->
+    <div class="absolute -bottom-1 left-0 right-0">
+        <svg viewBox="0 0 1440 120" class="w-full">
+            <path fill="#f9fafb" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+            <path fill="#f9fafb" d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
+            <path fill="#f9fafb" d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- بخش فرم درخواست دمو -->
+<section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- فرم درخواست -->
+            <div class="bg-gray-50 rounded-2xl p-8 shadow-lg border border-gray-200">
+                <h2 class="text-2xl font-bold text-green-800 mb-6">فرم درخواست دمو</h2>
+                
+                <form method="POST" class="space-y-6">
+                    {% csrf_token %}
+                    
+                    <div>
+                        <label for="fullname" class="block text-gray-700 mb-2 font-medium">نام کامل <span class="text-red-500">*</span></label>
+                        <input type="text" id="fullname" name="fullname" required 
+                               class="w-full rounded-xl border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                               placeholder="نام و نام خانوادگی">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-gray-700 mb-2 font-medium">ایمیل <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full rounded-xl border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                               placeholder="example@zamitech.ir">
+                    </div>
+                    
+                    <div>
+                        <label for="phone" class="block text-gray-700 mb-2 font-medium">شماره تماس <span class="text-red-500">*</span></label>
+                        <input type="tel" id="phone" name="phone" required 
+                               class="w-full rounded-xl border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                               placeholder="۰۹۱۲۱۲۳۴۵۶۷">
+                    </div>
+                    
+                    <div>
+                        <label for="company" class="block text-gray-700 mb-2 font-medium">نام شرکت/مزرعه</label>
+                        <input type="text" id="company" name="company" 
+                               class="w-full rounded-xl border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                               placeholder="نام شرکت یا مزرعه شما">
+                    </div>
+                    
+                    <div>
+                        <label for="product" class="block text-gray-700 mb-2 font-medium">محصول مورد نظر <span class="text-red-500">*</span></label>
+                        <select id="product" name="product" required
+                                class="w-full rounded-xl border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition">
+                            <option value="" disabled selected>-- انتخاب محصول --</option>
+                            <option value="abaak">آباک - تحلیل خاک هوشمند</option>
+                            <option value="fertility">توصیه کودی هوشمند</option>
+                            <option value="growth-iot">پایش رشد گیاه (IoT)</option>
+                            <option value="all">پکیج کامل زامیتک</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-gray-700 mb-2 font-medium">توضیحات اضافه</label>
+                        <textarea id="message" name="message" rows="4"
+                                  class="w-full rounded-xl border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                                  placeholder="در صورت نیاز توضیحات بیشتری بنویسید..."></textarea>
+                    </div>
+                    
+                    <div class="pt-2">
+                        <button type="submit" 
+                                class="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 font-semibold">
+                            <i class="fas fa-paper-plane ml-2"></i> ارسال درخواست دمو
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- اطلاعات دمو -->
+            <div class="space-y-8">
+                <div class="bg-green-50 rounded-2xl p-6 border border-green-100">
+                    <h3 class="text-xl font-bold text-green-800 mb-4">دمو زامیتک شامل چه چیزهایی است؟</h3>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full text-green-600 mr-3 flex-shrink-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="text-gray-700">دسترسی ۷ روزه به نسخه دمو محصول انتخاب شده</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full text-green-600 mr-3 flex-shrink-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="text-gray-700">جلسه آنلاین معرفی محصول با کارشناس فنی</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full text-green-600 mr-3 flex-shrink-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="text-gray-700">پشتیبانی تلفنی در طول دوره دمو</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full text-green-600 mr-3 flex-shrink-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="text-gray-700">مشاوره رایگان پس از پایان دوره دمو</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">سوالات متداول</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="border-b border-gray-200 pb-4">
+                            <h4 class="font-medium text-gray-800 mb-2">مدت زمان دمو چقدر است؟</h4>
+                            <p class="text-gray-600 text-sm">دموهای زامیتک به مدت ۷ روز کامل فعال هستند و شما می‌توانید تمام قابلیت‌های محصول را در این مدت تست کنید.</p>
+                        </div>
+                        
+                        <div class="border-b border-gray-200 pb-4">
+                            <h4 class="font-medium text-gray-800 mb-2">آیا دمو محدودیتی دارد؟</h4>
+                            <p class="text-gray-600 text-sm">دموها از نظر قابلیت‌ها کامل هستند اما ممکن است در تعداد کاربران یا حجم داده محدودیت داشته باشند.</p>
+                        </div>
+                        
+                        <div class="border-b border-gray-200 pb-4">
+                            <h4 class="font-medium text-gray-800 mb-2">پس از دمو چه اتفاقی می‌افتد؟</h4>
+                            <p class="text-gray-600 text-sm">کارشناسان ما با شما تماس خواهند گرفت تا نظرات شما را جویا شوند و در صورت تمایل، راهنمای خرید محصول را ارائه دهند.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 rounded-2xl p-6 border border-blue-100">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4">نیاز به راهنمایی دارید؟</h3>
+                    <p class="text-gray-700 mb-4">اگر در انتخاب محصول مناسب شک دارید یا نیاز به مشاوره تخصصی دارید، می‌توانید از راهنمایی کارشناسان ما استفاده کنید.</p>
+                    <a href="/contact/" class="inline-flex items-center text-blue-600 font-medium hover:underline">
+                        تماس با کارشناس
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA پایینی -->
+<section class="py-16 bg-gradient-to-r from-green-600 to-green-800 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">هنوز مطمئن نیستید؟</h2>
+        <p class="text-lg mb-8 text-green-100 max-w-2xl mx-auto">
+            می‌توانید از طریق ویدیوهای معرفی محصول، با قابلیت‌های زامیتک بیشتر آشنا شوید.
+        </p>
+        <a href="/products/" class="inline-block bg-white text-green-700 hover:bg-gray-100 px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition font-semibold">
+            <i class="fas fa-play-circle ml-2"></i> مشاهده ویدیوهای معرفی
+        </a>
+    </div>
+</section>
+
+<style>
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+{% endblock %}

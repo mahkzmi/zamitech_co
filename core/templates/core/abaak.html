@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+{% block title %}محصول آباک{% endblock %}
+
+{% block content %}
+<section class="bg-white py-16">
+  <div class="max-w-5xl mx-auto px-4 text-right">
+    <h1 class="text-4xl font-bold text-green-800 mb-6">آباک</h1>
+    <p class="text-gray-700 mb-10 leading-relaxed text-lg">
+      آباک، سامانه‌ای هوشمند برای تحلیل خاک و مدیریت بهینه منابع کشاورزی است که با بهره‌گیری از فناوری‌های نوین، به کشاورزان و کارشناسان کمک می‌کند تصمیمات دقیق‌تر و بهتری بگیرند.
+    </p>
+
+    <!-- امکانات محصول -->
+    <div class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <ul class="list-disc list-inside text-gray-700 space-y-3">
+        <li>تحلیل آنلاین و دقیق خاک با استانداردهای USDA</li>
+        <li>رابط کاربری مدرن و کاربرپسند</li>
+        <li>نمایش نقشه‌های تعاملی و قابلیت رسم پلی‌گون</li>
+        <li>پیشنهادات کودی هوشمند بر اساس داده‌های واقعی</li>
+        <li>قابلیت دانلود گزارش‌های تحلیلی PDF</li>
+        <li>پشتیبانی از نسخه وب و موبایل</li>
+      </ul>
+
+      <!-- تصاویر محصول -->
+      <div class="flex flex-col gap-6">
+        <img src="{% static 'images/product/dashboard1.png' %}" alt="داشبورد آباک" class="rounded-lg shadow-md">
+        <img src="{% static 'images/product/dashboard2.png' %}" alt="نمایی از آباک" class="rounded-lg shadow-md">
+      </div>
+    </div>
+
+    <!-- دکمه‌های CTA -->
+    <div class="text-center">
+      <a href="/purchase" class="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-10 py-3 rounded-xl transition mr-4">خرید محصول</a>
+      <a href="/product-details" class="inline-block bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold px-10 py-3 rounded-xl transition">اطلاعات بیشتر</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
