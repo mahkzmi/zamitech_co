@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ox#^@0us8#406nf$l_#r&s8njddz03kaiy%!=k7#%g4%&t7&5y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['zamitech.onrender.com']
+ALLOWED_HOSTS = ['zamitech.onrender.com', 'zamitech.ir', 'www.zamitech.ir']
 
 
 # Application definition
